@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SkillPath Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      padding: 30px;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+    h2 {
+      color: #0077cc;
+      margin-bottom: 20px;
+    }
+    p {
+      margin-bottom: 15px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="dashboard-content">
+    <h2>Loading your personalized dashboard...</h2>
+    <p>Please wait a moment.</p>
+  </div>
+
+  <script>
+    window.addEventListener("message", (event) => {
+      const data = event.data;
+
+      if (data.error) {
+        document.getElementById("dashboard-content").innerHTML = `
+          <h2>❌ Error loading dashboard</h2>
+          <p>${data.error}</p>
+        `;
+        return;
+      }
+
+      document.getElementById("dashboard-content").innerHTML = `
+        <h2>🌟 Personalized Skill Dashboard</h2>
+        <p><strong>💡 Skills You Need to Learn:</strong> ${data.missing_skills}</p>
+        <p><strong>🗺️ Roadmap:</strong><br>${data.roadmap.replace(/\n/g, "<br>")}</p>
+        <p><strong>💼 Job Suggestions:</strong> ${data.jobs}</p>
+      `;
+    });
+  </script>
+</body>
+</html>
