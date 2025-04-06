@@ -27,8 +27,8 @@ SkillPath AI helps by:
    - Generate a custom roadmap for missing skills
    - Recommend matching job/internship titles
 3. Presenting all results in a clean, interactive dashboard
-4. Optionally saving user progress for future tracking
-5. provide link to internship/job platforms or suggest them relevant job/internship opportiunities (to do in future..)
+4. (upcoming) saving user progress for future tracking
+5. (upcoming)provide link to internship/job platforms or suggest them relevant job/internship opportiunities or integrate API's to suggest real time opportunities
 
 ---
 
@@ -40,8 +40,23 @@ SkillPath AI helps by:
 | Backend    | Flask (Python)                        |
 | AI/LLM     | OpenAI GPT (via API)                  |
 | Storage    | CSV file or SQLite DB                 |
+| job data    | web scrapping (planned)              |
 | (Optional) Deployment | Render / Netlify (future)  |
-| data       | web scrapping platforms               |
+
+
+## 🔮 Future Enhancements
+
+- Multi-language support (regional Indian languages)
+- Login/Signup system for tracking long-term progress
+- Real-time job/internship scraping using APIs or BeautifulSoup/Selenium
+- Regional personalization based on location, education, and connectivity
+- Integration with WhatsApp/Telegram bots for reminders & updates
+
+---
+
+## 🤝 Team MIndMesh – Building AI for Social Good
+
+
 
 
 
